@@ -1,3 +1,4 @@
-#!/usr/bin/python3
-for ascii_value in range(ord('a'), ord('z') + 1):
-    print(chr(ascii_value), end='')
+# 2-print_alphabet.py
+
+for i in range(97, 123):
+    print("{}".format(chr(i)), end="")
