@@ -1,26 +1,30 @@
 #!/usr/bin/python3
-"""Module for text_indentation method."""
+"""define func"""
 
 
 def text_indentation(text):
-    """Method for adding 2 new lines after '.?:' chars.
-
+    """
+    a function that prints a
+    text with 2 new lines after each of these characters: ., ? and :
     Args:
-        text: The str text.
-
-    Raises:
-        TypeError: If text is not a str.
+    text: the argument in form of text
+    Raise:
+    Typerror: if it is not a string
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    for delim in ".?:":
-        # print(delim, text.split(delim))
-        text = (delim + "\n\n").join(
-            [line.strip(" ") for line in text.split(delim)])
+    char = 0
+    while char < len(text) and text[char] == ' ':
+        char += 1
 
-    print(text, end="")
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testfile("tests/5-text_indentation.txt")
+    while char < len(text):
+        print(text[char], end="")
+        if text[char] == '\n' or text[char] in ".?:":
+            if text[char] in ".?:":
+                print('\n')
+            char += 1
+            while char < len(text) and text[char] == ' ':
+                char += 1
+            continue
+        char += 1

@@ -1,7 +1,6 @@
->>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+#!/usr/bin/python3
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 
-Traceback (most recent call last):
-TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided((1, 2), 1)
 Traceback (most recent call last):
@@ -11,14 +10,21 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
->>> matrix_divided(None, 1)
+
+>>> matrix_divided({}, 1)
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
-
 
 >>> matrix_divided('hellothere', 1)
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided("", 1)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
 
 >>> matrix_divided([[6], [6, 6], [6, 6, 6]], 1)
 Traceback (most recent call last):
@@ -59,3 +65,30 @@ TypeError: div must be a number
 >>> matrix_divided([[6, 6, 6], [6, 6, 6], [6, 6, 6]], "")
 Traceback (most recent call last):
 TypeError: div must be a number
+
+
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+>>> matrix_divided([[6, 6, 6], [6, 6, 6], [6, 6, 6]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+Output must be rounded 2 decimal places
+Returns a new matrix
+
+>>> try:
+...     matrix = [[3, "9"], [12, 3]]
+...     print(matrix_divided(matrix, 2))
+...     print(matrix)
+... except Exception as e:
+...     print(e)
+...
+matrix must be a matrix(list of lists) of integers/floats
+>>> try:
+...     matrix = [[3, 9], [12, 3]]
+...     print(matrix_divided(matrix, "2"))
+...     print(matrix)
+... except Exception as e:
+...     print(e)
+...
+div must be a number
