@@ -1,4 +1,4 @@
 #!/usr/bin/node
 myVar = 89;
-require('./script');
+require('./100-let_me_const.js');
 console.log(myVar);
