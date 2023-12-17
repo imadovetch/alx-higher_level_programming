@@ -12,8 +12,8 @@ if __name__ == "__main__":
             sys.argv[1], sys.argv[2], sys.argv[3]
         ),
         pool_pre_ping=True,
-    )
-    with engine.connect() as connection:
+    )c
+    with engine.connect() as onnection:
         query = select(State).order_by(State.id.asc())
         state = connection.execute(query).fetchone()
         if state:
